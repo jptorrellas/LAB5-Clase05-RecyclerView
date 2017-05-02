@@ -8,5 +8,5 @@ import android.view.View;
 
 public interface IItem {
 
-    public void mostrarPosicion(View v, int position);
+    public void mostrarPosicion(View v);
 }

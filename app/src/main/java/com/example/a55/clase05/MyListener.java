@@ -9,14 +9,12 @@ import android.view.View;
 public class MyListener implements View.OnClickListener {
 
     private IItem iItem;
-    public  int position;
 
-    public MyListener(IItem iItem, int position) {
+    public MyListener(IItem iItem) {
         this.iItem = iItem;
-        this.position = position;
     }
 
     public void onClick(View v) {
-        this.iItem.mostrarPosicion(v, this.position);
+        this.iItem.mostrarPosicion(v);
     }
 }

@@ -15,7 +15,7 @@ import java.util.List;
  * Created by A55 on 30/04/2017.
  */
 
-public class MyAdapter extends Adapter<MyViewHolder> implements IItem {
+public class MyAdapter extends Adapter<MyViewHolder> {
 
     private List<Persona> lista;
 
@@ -46,12 +46,10 @@ public class MyAdapter extends Adapter<MyViewHolder> implements IItem {
         Persona p = lista.get(position);
         holder.txtNombre.setText(p.getNombre());
         holder.txtApellido.setText(p.getApellido());
+
+        //Guarda la posicion en el holder
+        holder.posicion = position;
         Log.d("ATENCION: ", "ENTRO AL onBindViewHolder( )"+ bind++);
-
-        //Agregado para mostrar posicion al hacer click
-        MyListener listener = new MyListener(this, position);
-        holder.txtNombre.setOnClickListener(listener);
-
     }
 
     @Override
@@ -60,11 +58,7 @@ public class MyAdapter extends Adapter<MyViewHolder> implements IItem {
         return this.lista.size();
     }
 
-    //Mi método de mi interface
-    @Override
-    public void mostrarPosicion(View v, int position) {
-        Log.d("POSICION DE ELEMENTO: ", "" + position);
-    }
+
 }
 
 

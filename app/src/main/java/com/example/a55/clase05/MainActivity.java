@@ -41,5 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         MyAdapter adapter = new MyAdapter(personas);
         list.setAdapter(adapter);
+
     }
 }
